@@ -1,46 +1,51 @@
 import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import logo from "../assets/Images/logo.svg";
+import { FaBars, FaTimes } from "react-icons/fa";
+import logo from "../assets/Images/logo.png"
 
-export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <nav className="fixed top-0 w-full z-50">
-      <div className="flex justify-between items-center max-w-7xl mx-auto py-4 font-semibold text-white bg-transparent">
-        <div className="ml-12 lg:mx-0 sm:mx-auto">
-          <img src={logo} alt="logo" className="lg:w-16 sm:w-28 ml-32" />
-        </div>
-        <div className="hidden lg:flex space-x-6 uppercase text-sm">
-          {["Help", "Courses", "Events", "Pricing", "About Us", "Course Plan", "Shop", "Member Area"].map((item) => (
+    <nav className="w-full flex justify-between items-center px-6 py-6 text-lg font-medium bg-white shadow-md">
+      <img src={logo} alt="logo" className=" w-20 h-20" />
+
+      <div className="hidden md:flex gap-8">
+        {["About", "Experience", "Projects", "Contact"].map((item) => (
+          <a
+            key={item}
+            href={`#${item.toLowerCase()}`}
+            className="hover:text-navy-800 transition-colors"
+          >
+            {item}
+          </a>
+        ))}
+      </div>
+
+      {/* Mobile Menu Button */}
+      <button
+        className="md:hidden text-2xl"
+        onClick={() => setMenuOpen(!menuOpen)}
+      >
+        {menuOpen ? <FaTimes /> : <FaBars />}
+      </button>
+
+      {/* Mobile Menu */}
+      {menuOpen && (
+        <div className="absolute top-16 left-0 w-full bg-white shadow-lg flex flex-col items-center mt-8 py-4 md:hidden">
+          {["About", "Experience", "Projects", "Contact"].map((item) => (
             <a
               key={item}
-              href="#"
-              className="relative after:content-[''] after:absolute after:w-0 after:h-0.5 after:bg-white after:left-0 after:bottom-0 after:transition-all after:duration-300 hover:after:w-full"
+              href={`#${item.toLowerCase()}`}
+              className="py-2 text-lg w-full text-center hover:bg-gray-100 transition"
+              onClick={() => setMenuOpen(false)}
             >
               {item}
             </a>
           ))}
         </div>
-        <div className="hidden lg:block">DE EN</div>
-        <button className="lg:hidden p-2 rounded" onClick={() => setIsOpen(!isOpen)}>
-          {isOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
-      </div>
-
-      <div
-        className={`lg:hidden fixed top-16 left-0 w-full bg-[rgb(19,19,19)] text-white font-semibold text-base uppercase p-4 flex flex-col items-center space-y-4 transition-all duration-300 ${
-          isOpen ? "h-auto opacity-100" : "h-0 opacity-0 overflow-hidden"
-        }`}
-      >
-        {isOpen &&
-          ["Help", "Courses", "Events", "Pricing", "About Us", "Course Plan", "Shop", "Member Area"].map((item) => (
-            <a key={item} href="#" className="text-white">
-              {item}
-            </a>
-          ))}
-        {isOpen && <span className="text-white">Deutch English</span>}
-      </div>
+      )}
     </nav>
   );
-}
+};
+
+export default Navbar;
