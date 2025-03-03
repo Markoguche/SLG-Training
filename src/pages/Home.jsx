@@ -21,7 +21,7 @@ const Home = () => {
         
         <div className="mt-6 flex gap-4">
         <button
-          className="bg-white text-black px-6 py-3 rounded-lg font-semibold hover:bg-blue-900 hover:text-white transition"
+          className="bg-white text-black px-6 py-3 rounded-lg border border-black  font-semibold hover:bg-blue-900 hover:text-white transition"
           onClick={() => window.open('/Oguche_Mark_CV.pdf', '_blank')}
         >
           Download CV
