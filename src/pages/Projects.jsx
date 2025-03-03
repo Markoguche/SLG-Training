@@ -21,7 +21,7 @@ const projects = [
       title: "Project Three",
       image: img3,
       github: "https://github.com/Markoguche/Web3-Templates/tree/main",
-      liveDemo: "https://web3-template1-git-main-markos-projects-78935461.vercel.app/",
+      liveDemo: "https://web3-template1.vercel.app/",
     },
   ];
   
