@@ -1,20 +1,22 @@
 import { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import logo from "../assets/Images/logo.png"
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <nav className="w-full flex justify-between items-center px-6 py-6 text-lg font-medium bg-white shadow-md">
-      <img src={logo} alt="logo" className=" w-20 h-20" />
+      {/* Simple Unique Logo */}
+      <div className="text-2xl font-extrabold bg-gradient-to-r from-blue-900 via-purple-600 to-blue-900 bg-clip-text text-transparent tracking-wide">
+        OM<span className="text-gray-600">.</span>
+      </div>
 
       <div className="hidden md:flex gap-8">
         {["About", "Experience", "Projects", "Contact"].map((item) => (
           <a
             key={item}
             href={`#${item.toLowerCase()}`}
-            className="hover:text-navy-800 transition-colors"
+            className="hover:text-blue-900 transition-colors"
           >
             {item}
           </a>

@@ -1,35 +1,94 @@
-import { FaCheckCircle } from "react-icons/fa";
 
-const Experience = () => {
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import "react-vertical-timeline-component/style.min.css";
+import SchoolIcon from "@mui/icons-material/School";
+import WorkIcon from "@mui/icons-material/Work";
+
+function Experience() {
   return (
-    <section id="experience" className="py-16 px-6 text-center">
-      <h3 className="text-gray-500 text-sm uppercase">Explore My</h3>
-      <h2 className="text-3xl font-bold mb-8">Experience</h2>
+    <div className="experience">
+      <VerticalTimeline lineColor="#3e497a">
+        
+        <VerticalTimelineElement
+          className="vertical-timeline-element--education"
+          date="2018 - 2023"
+          iconStyle={{ background: "#3e497a", color: "#fff" }}
+          icon={<SchoolIcon />}
+        >
+          <h3 className="vertical-timeline-element-title">
+            University of Abuja, FCT, Abuja
+          </h3>
 
-      <div className="max-w-2xl mx-auto border rounded-lg p-6 shadow-md">
-        <h3 className="text-xl font-semibold mb-4">Frontend Development</h3>
-        <div className="grid grid-cols-2 gap-4 text-left">
-          {[
-            { skill: "HTML", level: "Experienced" },
-            { skill: "CSS", level: "Experienced" },
-            { skill: "JavaScript", level: "Experienced" },
-            { skill: "Tailwind", level: "Experienced" },
-            { skill: "React JS", level: "Experienced" },
-            { skill: "TypeScript", level: "Intermediate" },
-            { skill: "Material UI", level: "Intermediate" }
-          ].map(({ skill, level }) => (
-            <div key={skill} className="flex items-center gap-2">
-              <FaCheckCircle className="text-black" />
-              <div>
-                <p className="font-medium">{skill}</p>
-                <p className="text-gray-500 text-sm">{level}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+          <h4 className="vertical-timeline-element-subtitle">
+            Bachelor's Degree
+          </h4>
+
+          <p>Statistics</p>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
+          className="vertical-timeline-element--work"
+          date="Sept 2023 – Dec 2023"
+          iconStyle={{ background: "#e9d35b", color: "#fff" }}
+          icon={<WorkIcon />}
+        >
+          <h3 className="vertical-timeline-element-title">
+            Website Developer - Boro Digital Dynamics
+          </h3>
+          <h4 className="vertical-timeline-element-subtitle">
+            Remote
+          </h4>
+          <p>Built responsive interfaces using React and Tailwind CSS for desktop and mobile.</p>
+        </VerticalTimelineElement>
+
+        <VerticalTimelineElement
+          className="vertical-timeline-element--work"
+          date="Aug 2024 – Dec 2024"
+          iconStyle={{ background: "#e9d35b", color: "#fff" }}
+          icon={<WorkIcon />}
+        >
+          <h3 className="vertical-timeline-element-title">
+            FrontEnd Developer - Saw-T Concept
+          </h3>
+          <h4 className="vertical-timeline-element-subtitle">
+            Remote
+          </h4>
+          <p>
+            Integrated third-party libraries and APIs for interactive dashboards and data
+            visualization
+          </p>
+        </VerticalTimelineElement>
+        <VerticalTimelineElement
+          className="vertical-timeline-element--work"
+          date="April 2025 – September 2025"
+          iconStyle={{ background: "#e9d35b", color: "#fff" }}
+          icon={<WorkIcon />}
+        >
+          <h3 className="vertical-timeline-element-title">
+            Website Developer - NINTV
+          </h3>
+          <h4 className="vertical-timeline-element-subtitle">
+            Remote
+          </h4>
+          <p>
+           Supported the organization ’ s digital presence by designing, structuring, and
+            maintaining responsive web pages for events, activities, and galleries.
+          </p>
+        </VerticalTimelineElement>
+      </VerticalTimeline>
+      <div className="text-center py-6">
+        <h1 className="mb-2">For a complete overview of my professional experience and additional projects:</h1>
+        <button
+          className="bg-white text-black px-6 py-3 rounded-lg border border-black  font-semibold hover:bg-blue-900 hover:text-white transition"
+          onClick={() => window.open('/OGUCHE MARK Resume.pdf', '_blank')}
+        >
+          View My Resume
+        </button>
       </div>
-    </section>
+    </div>
   );
-};
+}
 
 export default Experience;
