@@ -35,12 +35,12 @@ function Experience() {
           icon={<WorkIcon />}
         >
           <h3 className="vertical-timeline-element-title">
-            Website Developer - Boro Digital Dynamics
+            Wordpress Developer - Boro Digital Dynamics
           </h3>
           <h4 className="vertical-timeline-element-subtitle">
             Remote
           </h4>
-          <p>Built responsive interfaces using React and Tailwind CSS for desktop and mobile.</p>
+          <p>Built responsive interfaces using Wordpress for desktop and mobile.</p>
         </VerticalTimelineElement>
 
         <VerticalTimelineElement

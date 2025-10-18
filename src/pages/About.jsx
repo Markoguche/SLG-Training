@@ -34,7 +34,7 @@ const About = () => {
           <div className="border-2 border-gray-300 px-6 py-6 rounded-lg text-center shadow-md hover:shadow-xl transition-shadow duration-300">
             <FaAward className="text-3xl text-blue-900 mb-2 mx-auto" />
             <h3 className="font-bold text-lg">Experience</h3>
-            <p className="text-gray-600">2+ Years</p>
+            <p className="text-gray-600">3 Years</p>
             <p className="text-gray-500">Frontend Development</p>
           </div>
 
@@ -57,7 +57,7 @@ const About = () => {
             As a passionate <span className="font-semibold">Frontend Developer</span>, I
             specialize in crafting responsive, user-friendly, and visually
             engaging web applications. With over{" "}
-            <span className="font-semibold">2 years of experience</span>, I’ve
+            <span className="font-semibold">3 years of experience</span>, I’ve
             honed my skills in modern frameworks like React & Next.js,
             delivering seamless user interactions and high-performance
             interfaces.
@@ -82,6 +82,7 @@ const About = () => {
                 { skill: "Next JS", level: "Experienced" },
                 { skill: "TypeScript", level: "Experienced" },
                 { skill: "Material UI", level: "Experienced" },
+                { skill: "Wordpress", level: "Experienced" },
               ].map(({ skill, level }) => (
                 <div
                   key={skill}
